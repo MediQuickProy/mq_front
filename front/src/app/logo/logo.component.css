@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cornflowerblue;
+}
+
+.logo{
+    position: relative;
+    align-items: center;
+
+    width: 100px;
+    height: 100px;
+}
+
+.scene {
+    position: absolute;
+
+    width: 35%;
+    height: 35%;
+}
+
+
+/* Contenedor de las cajas estáticas */
+.cube {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.left{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+    transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translateX(50%) translateY(50%);
+    border-bottom: 0.5vh solid white;
+    border-right: 0.5vh solid white;
+    opacity: 0.7;
+}
+
+.right{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+    transform: rotate(-30deg) skewX(-30deg) scaleY(0.864) translateX(50%) translateY(50%);
+    border-right: 0.5vh solid white;
+    border-bottom: 0.5vh solid white;
+    opacity: 0.7;
+}
+
+.top{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    
+    transform: rotate(210deg) skewX(-30deg) scaleY(0.864) translateX(50%) translateY(50%);
+    border: 0.5vh solid white;
+    border-left: none;
+    border-top: none;
+    opacity: 0.7;
+}
+
+
+@keyframes move {
+    0% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    12% { top: 25%; left: 50%; transform: translate(-50%, -50%); }
+    24% { top: 38%; left: 72%; transform: translate(-50%, -50%); }
+    36% { top: 62%; left: 72%; transform: translate(-50%, -50%); }
+    48% { top: 74%; left: 50%; transform: translate(-50%, -50%); }
+    60% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    72% { top: 38%; left: 28%; transform: translate(-50%, -50%); }
+    84% { top: 62%; left: 28%; transform: translate(-50%, -50%); }
+    96% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+}
+
+.cube-active {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    width: 35%;
+    height: 35%;
+
+    animation: move 3s infinite;
+}
+
+.left-active {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.632);
+    
+    transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translateX(50%) translateY(50%);
+    border: 0.4vh solid white;
+    border-top: 0.25vh solid white;
+    border-left: 0.25vh solid white;
+}
+
+.right-active {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.632);
+    
+    transform: rotate(-30deg) skewX(-30deg) scaleY(0.864) translateX(50%) translateY(50%);
+    border: 0.4vh solid white;
+    border-left: 0.25vh solid white;
+    border-top: 0.25vh solid white;
+}
+
+.top-active {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.632);
+    
+    transform: rotate(210deg) skewX(-30deg) scaleY(0.864) translateX(50%) translateY(50%);
+    border: 0.4vh solid white;
+    border-top: 0.25vh solid white;
+    border-left: 0.25vh solid white;
+}
+
+
+/* Localización de las cajas */
+.top-front { top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+.top-hex { top: 25%; left: 50%; transform: translate(-50%, -50%);}
+.top-right { top: 38%; left: 72%; transform: translate(-50%, -50%);}
+.top-left { top: 38%; left: 28%; transform: translate(-50%, -50%);}
+
+.bottom-hex { top: 74%; left: 50%; transform: translate(-50%, -50%);}
+.bottom-right { top: 62%; left: 72%; transform: translate(-50%, -50%);}
+.bottom-left { top: 62%; left: 28%; transform: translate(-50%, -50%);}
+
+.active { top: 50%; left: 50%; transform: translate(-50%, -50%);}
