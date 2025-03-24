@@ -1,0 +1,5 @@
+.grid-container {
+    display: grid; /* Activa el grid */
+    grid-template-columns: repeat(2, 1fr); /* Crea 3 columnas iguales */
+    gap: 10px;
+}

@@ -6,37 +6,15 @@ html {
     scroll-behavior: smooth;
 }
 
-.about-this{
-    display: flex;
-    position: absolute;
-    top: 200%;
-
-    width: 100%;
+.grid-container{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100vw;
     height: 100%;
 }
 
-.link-about-this{
-    position: absolute;
-    width: 100%;
-    top: 3%;
-    font-size: 1.2em;
-}
-
-.log-in{
-    display: flex;
-    position: absolute;
-    top: 100%;
-
-    width: 100%;
-    height: 100%;
-}
-
-.link-log-in{
-    position: absolute;
-    width: 100%;
-    top: 85%;
-    font-size: 1.5em;
-}
 
 .main-shadow-card{
     display: flex;
@@ -89,6 +67,8 @@ html {
     z-index: 6;
 }
 
+
+/*< LINKS >===========================================================================================x>*/
 a{
     text-decoration: none;
     color: var(--text-primary);
@@ -124,6 +104,22 @@ a:hover:after{
     width: 100%;
 }
 
+.link-log-in{
+    position: absolute;
+    width: 100%;
+    top: 85%;
+    font-size: 1.5em;
+}
+
+.link-about-this{
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    font-size: 1.2em;
+}
+
+
+/*< LOGO >===========================================================================================x>*/
 app-logo{
     position: absolute;
     width: 50%;
@@ -132,4 +128,150 @@ app-logo{
     top: 25%;
     left: 50%;
     transform: translate(-50%, -40%);
+}
+
+/*< FORMULARIO LOG-IN >==============================================================================x>*/
+.log-in{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 90%;
+
+    width: 100%;
+    height: 80%;
+}
+
+.field{
+    position: relative;
+    margin: 5%;
+}
+
+.icon{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    color: var(--warning);
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    top: 10%;
+    left: 100%; /* Oculto inicialmente */
+    width: 70vw;
+    height: 80%;
+
+    background-color: var(--primary-light);
+    color: white;
+    padding: 20px;
+    transition: 0.3s; /* Transición suave */
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+    z-index: 800;
+}
+
+.back-sidebar{
+    top: 7.5%;
+    width: 72vw;
+    height: 85%;
+    background-color: var(--primary-dark);
+}
+
+/* Cuando se muestra el menú */
+.sidebar.active {
+    left: 30%; /* Mueve el menú para que aparezca */
+}
+
+.back-sidebar.active {
+    left: 28%;
+}
+
+/* Botón de cerrar */
+.btn-form {
+    position: absolute;
+    top: 2.5%;
+    right: 2.5%;
+    background-color: var(--primary-dark);
+    color: var(--text-primary);
+}
+
+app-sign-up{
+    position: absolute;
+    top: 8%;
+    left: 25%;
+    width: 100%;
+    height: 100%;
+}
+
+.left-peak{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+
+    background-color: var(--primary-light);
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.right-peak{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+
+    background-color: var(--primary-light);
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.login-form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 20%;
+    left: 120%;
+    z-index: 2;
+}
+
+/*< ABOUT THIS >====================================================================================x> */
+.about-this{
+    display: flex;
+    position: absolute;
+    top: 160%;
+
+    width: 100%;
+    height: 100%;
+}
+
+.rotated-main{
+    transform: rotate(180deg);
+    bottom: 0%;
+}
+
+.rotated-back-main{
+    transform: rotate(180deg);
+    bottom: 0.5%;
+}
+
+.rotated{
+    transform: rotate(180deg);
+}
+
+.foot-text{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+    margin: 5%;
+}
+
+.technology-columns{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }

@@ -5,7 +5,9 @@ import { NavbarComponent } from "../recurrent-modules/navbar/navbar.component";
   selector: 'app-medico',
   templateUrl: './medico.component.html',
   styleUrls: ['./medico.component.css'],
-  imports: [NavbarComponent]
+  imports: [
+    NavbarComponent
+  ]
 })
 export class MedicoComponent implements OnInit {
 

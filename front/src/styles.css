@@ -17,18 +17,29 @@ body {
     font-family: 'Gotham', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 :root {
     --primary-dark: #22627d;
     --primary-light: #2a7b9d;
     --background: white;
     --text-primary: white;
     --text-secondary: #0e0e0e;
+    --warning: rgb(141, 0, 0);
 }
 
 .line {
     width: 100%;
     height: 2px;
     background-color: var(--text-primary);
+}
+
+.hspaced{
+    position: relative;
+    width: 100%;
+    height: 3vh;
 }
 
 .screen{
@@ -69,4 +80,186 @@ app-navbar{
     background-color: var(--primary-dark);
     z-index: 3;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
+}
+
+.btn-primary{
+    color: var(--primary-dark);
+    background-color: transparent;
+    border: 2px solid var(--primary-dark);
+    border-radius: 10px;
+}
+
+.btn-primary:hover{
+    color: var(--text-primary);
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-secondary{
+    color: var(--warning);
+    background-color: transparent;
+    border: 2px solid var(--warning);
+    border-radius: 10px;
+}
+
+.btn-secondary:hover{
+    color: var(--text-primary);
+    background-color: var(--warning);
+    border-color: var(--warning);
+}
+
+/*< MODAL >==========================================================================================x> */
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.modal.show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+  
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 15% auto; 
+    width: 40%;
+    height: 60vh;
+    border-radius: 8px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-primary);
+    top: 0%;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.modal-body{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: first baseline;
+    top: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: var(--background);
+    color: black;
+    border-radius: 5px;
+}
+
+.error{
+    background-color: var(--warning);
+    color: var(--text-primary);
+}
+
+.error-border{
+    border: 2px solid var(--warning);
+}
+
+.success{
+    background-color: var(--primary-light);
+    color: var(--text-primary);
+}
+
+.success-border{
+    border: 2px solid var(--primary-light);
+}
+
+/*< FORMS >==========================================================================================x>*/
+.field{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-content: center;
+    margin: 3%;
+}
+
+.field input{
+    color: var(--primary-dark);
+    background: none;
+    padding: 0.625rem;
+    border: 2px solid var(--primary-dark);
+    transition: border-color 250ms;
+    width: 100%;
+}
+
+.field label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 0.625rem 0.625rem;
+    color: var(--primary-dark);
+    background-color: var(--background);
+    padding-inline: 0.25rem;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: translate 250ms,
+        background-color 250ms,
+        border-color 250ms;
+}
+
+.field:focus-within label,
+.field:not(:has(:placeholder-shown))
+label {
+    translate: 0.625rem -1rem;
+    border-color: var(--primary-dark);
+}
+
+.field{
+    color: transparent;
+}
+
+.card{
+    display: inline-flex;
+}
+
+.card{
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border: 5px solid var(--primary-dark);
+}
+
+.card-title{
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: -2rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    font-size: 1.3em;
+
+    background-color: var(--primary-dark);
+    color: var(--text-primary);
+    text-align: center;
+    border-radius: 5px;
 }

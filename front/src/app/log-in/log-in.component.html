@@ -1,25 +1,126 @@
 <div class="col">
-  <div class="main">
+  <div class="main" id="MAIN">
     <div class="main-shadow-card"></div>
+
     <div class="main-card">
       <div class="title">
         <p><div class="line"></div><strong> MEDIQUICK </strong><div class="line"></div><p>
       </div>
+
       <div class="content">
         <div class="link-about-this">
           <a href="#ABOUT-THIS"><strong> ABOUT THIS </strong></a>
         </div>
         <app-logo></app-logo>
         <div class="link-log-in">
-          <a href="#LOG-IN" [routerLink]="'/home'"><strong> > INICIAR SESIÓN < </strong></a>
+          <a href="#LOG-IN"><strong> > INICIAR SESIÓN < </strong></a>
         </div>
       </div>
     </div>
   </div>
-  <div class="about-this" id="ABOUT-THIS">
-    <p>Hola mundo</p>
-  </div>
+
   <div class="log-in" id="LOG-IN">
-    <p>Hola mundo</p>
+    <div class="grid-container">
+      <div class="left-peak"></div>
+
+      <div class="login-form">
+        <div #formContainer class="card">
+          <div class="card-title">
+            <p><strong> INICIAR SESIÓN </strong><p>
+          </div>
+          <div class="field">
+            <input type="text" id="username" placeholder="...">
+            <label for="username"> Usuario </label>
+          </div>
+          <div class="field">
+            <input type="password" id="password" placeholder="...">
+            <label for="password"> Contraseña </label>
+          </div>
+          <div class="field">
+            <div class="hspaced"></div>
+            <button (click)="log_in()" type="button" class="btn btn-primary"> ENVIAR </button>
+            <div class="hspaced"></div>
+            <button (click)="toggleMenu()" class="btn btn-secondary"> REGISTRAR </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-peak"></div>
+    </div>
+    
+    <div class="modal" [ngClass]="{'show': showModal}">
+      <div class="modal-content error-border">
+        <div class="error modal-header">
+          <h2> ERROR </h2>
+          <button class="close" (click)="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon bi bi-x-octagon" viewBox="0 0 16 16">
+            <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg>
+          <h3>Credenciales inválidas.</h3>
+          <h3> Intenta nuevamente.</h3>
+          <div class="hspaced"></div>
+          <button (click)="toggleMenu()" class="btn btn-secondary"> REGISTRAR </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar back-sidebar" [ngClass]="{ 'active': showMenu }"></div>
+    <div class="sidebar" [ngClass]="{ 'active': showMenu }">
+      <button class="close btn-form" (click)="toggleMenu()"> X </button>
+      <app-sign-up></app-sign-up>
+    </div>
+  </div>
+
+  <div class="about-this" id="ABOUT-THIS">
+    <div class="main-shadow-card rotated-back-main"></div>
+    <div class="main-card rotated-main">
+      <div class="rotated foot-text">
+        <h2><strong>Apoyo al Diagnóstico de Cáncer de Pulmón</strong></h2>
+        <div class="hspaced"></div>
+        <p>
+          Este sistema está diseñado para asistir en el diagnóstico temprano y preciso del cáncer de pulmón, 
+          utilizando herramientas avanzadas de análisis de datos y aprendizaje automático. 
+          Proporciona a los médicos información clave basada en patrones detectados en imágenes y datos clínicos.
+        </p>
+        <p>
+          Además, el sistema busca ser un apoyo integral para el personal médico, 
+          reduciendo la carga de trabajo y mejorando la precisión en la toma de decisiones. 
+          Esto permite a los profesionales de la salud enfocarse en brindar una atención más personalizada y eficiente a los pacientes.
+        </p>
+        <p>
+          Los beneficios incluyen una mayor tasa de detección temprana, 
+          lo que puede llevar a mejores resultados para los pacientes, 
+          así como una optimización de los recursos médicos y una mejora en la calidad del servicio de salud.
+        </p>
+        <div class="hspaced"></div>
+        <div class="technology-columns">
+          <div class="column">
+            <h3>TensorFlow</h3>
+            <p>Una biblioteca de aprendizaje automático de código abierto utilizada para entrenar y desplegar modelos de inteligencia artificial que analizan imágenes y datos clínicos.</p>
+          </div>
+          <div class="column">
+            <h3>Python</h3>
+            <p>El lenguaje de programación principal para el desarrollo del backend y la implementación de algoritmos de análisis de datos y aprendizaje automático.</p>
+          </div>
+          <div class="column">
+            <h3>Google Cloud</h3>
+            <p>Proporciona la infraestructura en la nube para el almacenamiento seguro de datos, el procesamiento de imágenes y la ejecución de modelos de aprendizaje automático.</p>
+          </div>
+          <div class="column">
+            <h3>Angular</h3>
+            <p>Un framework de desarrollo frontend utilizado para crear una interfaz de usuario interactiva y dinámica.</p>
+          </div>
+          <div class="column">
+            <h3>Django</h3>
+            <p>Un framework web de Python que gestiona el backend, incluyendo la lógica de negocio, la autenticación de usuarios y la comunicación con la base de datos.</p>
+          </div>
+        </div>
+        <div class="hspaced"></div>
+        <a class="h2" href="#MAIN">¡BIENVENIDOS A MEDIQUICK!</a>
+      </div>
+    </div>
   </div>
 </div>
