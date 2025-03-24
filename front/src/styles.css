@@ -8,11 +8,65 @@
 
 @font-face {
     font-family: 'Gotham';
-    src: url('./fonts/Gotham-Book.otf') format('opentype');
+    src: url('./fonts/Gotham-Medium.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
 
 body {
     font-family: 'Gotham', sans-serif;
+}
+
+:root {
+    --primary-dark: #22627d;
+    --primary-light: #2a7b9d;
+    --background: white;
+    --text-primary: white;
+    --text-secondary: #0e0e0e;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+}
+
+.screen{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+app-navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.title-bar {
+    display: flex;
+    position: absolute;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+    width: 100%;
+    height: 15%;
+
+    background-color: var(--primary-light);
+    color: var(--text-primary);
+    z-index: 4;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
+    padding-right: 2.5%;
+}
+
+.shadow-title-bar {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 17%;
+
+    background-color: var(--primary-dark);
+    z-index: 3;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
 }
