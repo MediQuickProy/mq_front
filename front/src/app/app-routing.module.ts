@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 
 const routes: Routes = [
-  { path: '', component: LogInComponent},
+  { path: '', component: LogInComponent, data: { animation: 'LogInPage' }},
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
   { path: 'perfil', loadChildren: () => import('./medico/medico.module').then(m => m.MedicoModule)},
   { path: 'pacientes', loadChildren: () => import('./paciente/paciente.module').then(m => m.PacienteModule)},

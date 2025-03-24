@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+app-logo{
+    width: 100px;
+    height: 100px;
+}
+
 .navbar{
     display: flex;
     position: relative;

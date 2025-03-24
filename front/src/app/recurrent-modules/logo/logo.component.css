@@ -16,9 +16,6 @@ body {
     position: relative;
     align-items: center;
     aspect-ratio: 1/1;
-
-    width: 100px;
-    height: 100px;
 }
 
 .scene {

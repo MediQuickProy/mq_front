@@ -18,6 +18,8 @@ import { HistorialRoutes } from './historial/historial.routing';
 import { ExamenRoutes } from './examen/examen.routing';
 import { HomeRoutes } from './home/home.routing';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -37,7 +39,8 @@ import { HomeRoutes } from './home/home.routing';
     PacienteRoutes,
     HistorialRoutes,
     ExamenRoutes,
-    HomeRoutes
+    HomeRoutes,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

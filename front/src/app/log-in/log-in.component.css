@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.about-this{
+    display: flex;
+    position: absolute;
+    top: 200%;
+
+    width: 100%;
+    height: 100%;
+}
+
+.link-about-this{
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    font-size: 1.2em;
+}
+
+.log-in{
+    display: flex;
+    position: absolute;
+    top: 100%;
+
+    width: 100%;
+    height: 100%;
+}
+
+.link-log-in{
+    position: absolute;
+    width: 100%;
+    top: 85%;
+    font-size: 1.5em;
+}
+
+.main-shadow-card{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-dark);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+}
+
+.main-card{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+
+    width: 100%;
+    height: 95%;
+    background-color: var(--primary-light);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+}
+
+.title{
+    position: absolute;
+    justify-items: center;
+    top: 25%;
+
+    width: 90%;
+    height: 10%;
+    z-index: 5;
+
+    font-size: 12em;
+    color: var(--text-primary);
+    opacity: 0.3;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-primary);
+    opacity: 0.8;
+}
+
+a:before,
+a:after{
+    content:"";
+    position: absolute;
+    height: 10%;
+    width: 0%;
+    background-color: var(--text-primary);
+    transition: 3s;
+}
+
+a:after{
+    left: 0;
+    bottom: -10px;
+}
+
+a:before{
+    right: 0;
+    top: -10px;
+}
+
+a:hover{
+    opacity: 1.0;
+}
+
+a:hover:before,
+a:hover:after{
+    width: 100%;
+}
+
+app-logo{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
