@@ -2,8 +2,17 @@
     margin: 0;
 }
 
-.main-content{
+.column{
     display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -18,4 +27,9 @@ app-sign-up{
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+app-profile{
+    position: relative;
+    top: 0%;
 }

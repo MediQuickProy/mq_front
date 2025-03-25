@@ -1,0 +1,15 @@
+.main{
+    width: 100vw;
+    height: 100vh;
+}
+
+.h-80{
+    height: 90vh;
+}
+
+.caption{
+    background-color: rgba(0, 0, 0, 0.582);
+    width: 100%;
+    left: 0%;
+    padding: 3%;
+}

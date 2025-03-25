@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: 'Gotham';
-    src: url('./fonts/Gotham-Light.otf') format('opentype');
+    src: url('./assets/fonts/Gotham-Light.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('./fonts/Gotham-Medium.otf') format('opentype');
+    src: url('./assets/fonts/Gotham-Medium.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
@@ -44,6 +44,8 @@ body::-webkit-scrollbar {
 
 .screen{
     position: relative;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
 }
@@ -229,10 +231,6 @@ label {
 
 .field{
     color: transparent;
-}
-
-.card{
-    display: inline-flex;
 }
 
 .card{

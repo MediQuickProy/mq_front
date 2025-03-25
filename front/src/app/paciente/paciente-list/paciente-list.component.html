@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="row">
+    <div #formContainer class="row">
+      <div class="field">
+        <input type="text" id="patient" placeholder="...">
+        <label for="patient"> ID Paciente </label>
+      </div>
+      <button (click)="log_in()" type="button" class="btn btn-primary"> BUSCAR </button>
+    </div>
+  </div>
+  <div class="title">
+    <h5>ID</h5>
+    <h5>Nombre</h5>
+    <h5>Fecha de nacimiento</h5>
+  </div>
+  <div class="line"></div>
+  @for (paciente of pacientes; track paciente.id){
+    <div class="element">
+      <p>{{paciente.id}}</p>
+      <p>{{paciente.nombre}}</p>
+      <p>{{paciente.fechaNacimiento}}</p>
+    </div>
+  }
+
+</div>

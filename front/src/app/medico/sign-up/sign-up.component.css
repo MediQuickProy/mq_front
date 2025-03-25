@@ -3,3 +3,11 @@
     grid-template-columns: repeat(2, 1fr); /* Crea 3 columnas iguales */
     gap: 10px;
 }
+
+.icon{
+    position: relative;
+    top: -5%;
+    width: 20em;
+    height: 20em;
+    color: var(--primary-dark);
+}
