@@ -22,8 +22,8 @@ body::-webkit-scrollbar {
 }
 
 :root {
-    --primary-dark: #22627d;
-    --primary-light: #2a7b9d;
+    --primary-dark: #7d2240;
+    --primary-light: #e43e7e;
     --background: white;
     --text-primary: white;
     --text-secondary: #0e0e0e;
