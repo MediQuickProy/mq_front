@@ -31,7 +31,8 @@
     display: grid;
     align-items: center;
     text-align: center;
-    grid-template-columns: repeat(4, 3.5fr);
+    justify-content: center;
+    grid-template-columns: repeat(3, 3.5fr);
     gap: 10px;
     width: 100%;
 }
@@ -44,12 +45,18 @@
     display: grid;
     align-items: center;
     text-align: center;
+    text-align: center;
 
-    grid-template-columns: repeat(4, 3.5fr);
+    grid-template-columns: repeat(3, 3.5fr);
     gap: 10px;
     width: 100%;
-    background-color: #2a7b9d17;
+    background-color: var(--primary-opaque);
     border-radius: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
+}
+
+.element:hover{
+    background-color: var(--primary-dark);
+    color: white;
 }

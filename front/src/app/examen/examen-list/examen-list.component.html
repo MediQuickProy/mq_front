@@ -1,29 +1,26 @@
 <div class="main">
   <div #formContainer class="row">
     <div class="field">
-      <input type="text" id="patient" placeholder="...">
-      <label for="patient"> ID Paciente </label>
+      <input type="text" id="exam" placeholder="...">
+      <label for="exam"> ID Exámen </label>
     </div>
     <div class="field">
-      <input type="text" id="history" placeholder="...">
-      <label for="history"> ID Historial </label>
+      <input type="text" id="patient" placeholder="...">
+      <label for="patient"> ID Paciente </label>
     </div>
     <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
   </div>
   <div class="title">
     <h5>ID Examen</h5>
-    <h5>ID Historial</h5>
     <h5>ID Paciente</h5>
     <h5>Última actualización</h5>
   </div>
   <div class="line"></div>
   @for (examen of examenes; track examen.id_examen){
     <div class="element">
-      <p>{{examen.id_examen}}</p>
-      <p>{{examen.id_historial}}</p>
+      <p><strong> {{examen.id_examen}} </strong></p>
       <p>{{examen.id_paciente}}</p>
       <p>{{examen.fecha_realizacion}}</p>
     </div>
   }
-
 </div>

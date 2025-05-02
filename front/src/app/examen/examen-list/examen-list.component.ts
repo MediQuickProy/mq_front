@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExamenDetailComponent } from '../examen-detail/examen-detail.component';
 
 @Component({
   selector: 'app-examen-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./examen-list.component.css']
 })
 export class ExamenListComponent implements OnInit {
+
+  mostrarModal = false;
   examenes = [
     {"id_examen": 201, "id_historial": 1, "id_paciente": 101, "fecha_realizacion": "2024-03-08"},
     {"id_examen": 202, "id_historial": 2, "id_paciente": 102, "fecha_realizacion": "2024-02-20"},
@@ -22,5 +25,4 @@ export class ExamenListComponent implements OnInit {
 
   lookfor(){
   }
-
 }
