@@ -7,7 +7,7 @@ import { ExamenDetailComponent } from '../examen-detail/examen-detail.component'
   styleUrls: ['./examen-list.component.css']
 })
 export class ExamenListComponent implements OnInit {
-
+//
   mostrarModal = false;
   examenes = [
     {"id_examen": 201, "id_historial": 1, "id_paciente": 101, "fecha_realizacion": "2024-03-08"},

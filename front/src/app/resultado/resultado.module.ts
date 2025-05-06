@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExamenComponent } from './examen.component';
+import { ResultadoComponent } from './resultado.component';
 import { NavbarModule } from '../recurrent-modules/navbar/navbar.module';
-import { ExamenRoutes } from './examen.routing';
-// 
+import { ResultadoRoutes } from './resultado.routing';
+
 @NgModule({
   imports: [
     CommonModule,
-    ExamenComponent,
+    ResultadoComponent,
     NavbarModule,
-    ExamenRoutes
+    ResultadoRoutes
+     
   ],
   declarations: [],
-  exports: [
-    ExamenComponent
-  ]
+    exports: [
+      ResultadoComponent
+    ]
 })
-export class ExamenModule { }
+export class ResultadoModule { }

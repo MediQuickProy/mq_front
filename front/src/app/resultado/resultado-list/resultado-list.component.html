@@ -1,0 +1,28 @@
+<div class="main">
+  <div #formContainer class="row">
+    <div class="field">
+      <input type="text" id="exam" placeholder="...">
+      <label for="resultado"> ID resultado </label>
+    </div>
+    <div class="field">
+      <input type="text" id="examen" placeholder="...">
+      <label for="examen"> ID examen </label>
+    </div>
+    <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
+  </div>
+  <div class="title">
+    <h5>ID Resultado</h5>
+    <h5>ID examen</h5>
+    <h5>Última actualización</h5>
+    <h5>Resultado</h5>
+  </div>
+  <div class="line"></div>
+  @for (resultado of resultados; track resultado.id){
+    <div class="element">
+      <p><strong> {{resultado.id}} </strong></p>
+      <p>{{resultado.fecha}}</p>
+      <p>{{resultado.respuesta}}</p>
+      <p>{{resultado.examen}}</p>
+    </div>
+  }
+</div>

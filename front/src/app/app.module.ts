@@ -19,11 +19,14 @@ import { ExamenRoutes } from './examen/examen.routing';
 import { HomeRoutes } from './home/home.routing';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResultadoComponent } from './resultado/resultado.component';
+import { ResultadoModule } from './resultado/resultado.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [	
+    AppComponent,
+      
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HistorialModule,
     EventoModule,
     ExamenModule,
+    ResultadoModule,
     PacienteModule,
     HomeModule,
     LogInModule,
