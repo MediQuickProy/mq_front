@@ -1,11 +1,11 @@
 <div class="main">
   <div #formContainer class="row">
     <div class="field">
-      <input type="text" id="patient" placeholder="...">
+      <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
       <label for="patient"> ID Paciente </label>
     </div>
     <div class="field">
-      <input type="text" id="history" placeholder="...">
+      <input type="text" id="history" placeholder="..." [formControl]="idHistorial">
       <label for="history"> ID Historial </label>
     </div>
     <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
@@ -17,7 +17,7 @@
     <h5>Última actualización</h5>
   </div>
   <div class="line"></div>
-  @for (examen of examenes; track examen.id_examen){
+  @for (examen of resultados; track examen.id_examen){
     <div class="element">
       <p>{{examen.id_examen}}</p>
       <p>{{examen.id_historial}}</p>

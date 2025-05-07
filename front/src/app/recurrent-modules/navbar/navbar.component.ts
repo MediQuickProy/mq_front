@@ -18,4 +18,18 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleMusic() {
+    const audio = document.getElementById('backgroundMusic') as HTMLAudioElement;
+  
+    if (audio) {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    } else {
+      console.error("El elemento de audio no se encontró.");
+    }
+  }
+
 }

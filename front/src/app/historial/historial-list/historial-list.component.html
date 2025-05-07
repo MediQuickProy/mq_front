@@ -1,7 +1,7 @@
 <div class="main">
   <div #formContainer class="row">
     <div class="field">
-      <input type="text" id="patient" placeholder="...">
+      <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
       <label for="patient"> ID Paciente </label>
     </div>
     <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
@@ -12,7 +12,7 @@
     <h5>Última actualización</h5>
   </div>
   <div class="line"></div>
-  @for (historial of historiales; track historial.id_historial){
+  @for (historial of resultados; track historial.id_historial){
     <div class="element">
       <p>{{historial.id_historial}}</p>
       <p>{{historial.id_paciente}}</p>
