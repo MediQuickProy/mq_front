@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ResultadoComponent } from './resultado.component';
 import { NavbarModule } from '../recurrent-modules/navbar/navbar.module';
 import { ResultadoRoutes } from './resultado.routing';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
+  declarations: [],
   imports: [
     CommonModule,
-    ResultadoComponent,
+    FormsModule,
     NavbarModule,
     ResultadoRoutes
-     
   ],
-  declarations: [],
-    exports: [
-      ResultadoComponent
-    ]
+  exports: []
 })
-export class ResultadoModule { }
+export class ResultadoModule {}

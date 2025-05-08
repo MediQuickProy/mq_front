@@ -1,12 +1,34 @@
-<div class="screen">
-  <app-navbar></app-navbar>
-  <div class="shadow-title-bar"></div>
-  <div class="title-bar">
-      <h1><div class="line"></div><strong> Resultado </strong><div class="line"></div></h1>
+<!--
+<div class="main">
+  <div class="row mb-3">
+    <div class="col">
+      <label for="resultado">ID Resultado</label>
+      <input type="text" id="resultado" [(ngModel)]="idResultado" class="form-control" placeholder="...">
+    </div>
+    <div class="col">
+      <label for="examen">ID Examen</label>
+      <input type="text" id="examen" [(ngModel)]="idExamen" class="form-control" placeholder="...">
+    </div>
+    <div class="col d-flex align-items-end">
+      <button (click)="lookfor()" type="button" class="btn btn-primary">BUSCAR</button>
+    </div>
   </div>
-  <div class="main-content">
-      <div class="column">
-          <app-resultado-list></app-resultado-list>
-      </div>
+
+  <div class="row fw-bold mb-2">
+    <div class="col">ID Resultado</div>
+    <div class="col">ID Examen</div>
+    <div class="col">Última actualización</div>
+    <div class="col">Resultado</div>
+  </div>
+  <hr />
+
+  <div *ngFor="let resultado of resultadosFiltrados; trackBy: trackById" class="row mb-2">
+    <div class="col">{{ resultado.id }}</div>
+    <div class="col">{{ resultado.examen ?? 'N/A' }}</div>
+    <div class="col">{{ resultado.fecha }}</div>
+    <div class="col">{{ resultado.respuesta }}</div>
   </div>
 </div>
+-->
+
+<app-resultado-list></app-resultado-list>

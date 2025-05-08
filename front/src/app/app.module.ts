@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,9 @@ import { HomeRoutes } from './home/home.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResultadoComponent } from './resultado/resultado.component';
 import { ResultadoModule } from './resultado/resultado.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [	
@@ -38,6 +41,9 @@ import { ResultadoModule } from './resultado/resultado.module';
     PacienteModule,
     HomeModule,
     LogInModule,
+    HttpClientModule,
+    FormsModule,
+    CommonModule,
     LogInRoutes,
     MedicoRoutes,
     PacienteRoutes,
@@ -46,7 +52,7 @@ import { ResultadoModule } from './resultado/resultado.module';
     HomeRoutes,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [provideClientHydration()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
