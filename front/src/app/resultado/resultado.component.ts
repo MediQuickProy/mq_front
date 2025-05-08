@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ResultadoService } from './resultado.service';
 import { Resultado } from './resultado';
 import { NavbarComponent } from "../recurrent-modules/navbar/navbar.component";
 import { ResultadoListComponent } from "./resultado-list/resultado-list.component";
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-resultado',
   standalone: true,
-  imports: [NavbarComponent, ResultadoListComponent],
+  imports: [NavbarComponent, ResultadoListComponent, FormsModule, CommonModule],
   templateUrl: './resultado.component.html',
   styleUrls: ['./resultado.component.css']
 })
-export class ResultadoComponent {
+export class ResultadoComponent implements OnInit {
   resultados: Resultado[] = [];
+  resultadosFiltrados: Resultado[] = [];  // ✅ necesario para el *ngFor
   idResultado: string = '';
   idExamen: string = '';
 
@@ -25,6 +28,7 @@ export class ResultadoComponent {
   obtenerResultados() {
     this.resultadoService.obtenerResultados().subscribe(data => {
       this.resultados = data;
+      this.resultadosFiltrados = data; // ✅ inicializar la lista a mostrar
     });
   }
 
@@ -32,11 +36,9 @@ export class ResultadoComponent {
     const id = this.idResultado.trim();
     const examen = this.idExamen.trim();
 
-    this.resultadoService.obtenerResultados().subscribe(data => {
-      this.resultados = data.filter(r => {
-        return (!id || r.id.toString() === id) &&
-               (!examen || r.examen?.toString() === examen);
-      });
+    this.resultadosFiltrados = this.resultados.filter(r => {
+      return (!id || r.id.toString() === id) &&
+             (!examen || r.examen?.toString() === examen);
     });
   }
 
