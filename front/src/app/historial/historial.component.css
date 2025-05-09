@@ -13,11 +13,12 @@
 
 .main-content{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     position: absolute;
     justify-content: center;
     align-items: center;
+    text-align: left;
     top: 20%;
     width: 100vw;
     height: 100vh;
