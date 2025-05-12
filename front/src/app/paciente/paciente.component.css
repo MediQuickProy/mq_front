@@ -5,6 +5,8 @@
 .column{
     display: flex;
     justify-content: center;
+    text-align: center;
+
     padding: 20px;
     width: 100%;
     height: 100%;
@@ -20,4 +22,12 @@
     top: 20%;
     width: 100vw;
     height: 100vh;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: fit-content;
 }

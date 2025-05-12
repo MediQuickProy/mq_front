@@ -1,0 +1,23 @@
+<div #formContainer class="card">
+  <div class="card-title">
+    <p> REGISTRAR <p>
+  </div>
+  <div class="field hitbox">
+    <input type="text" id="name" placeholder="...">
+    <label for="name"> Nombre </label>
+  </div>
+  <div class="field hitbox">
+    <input type="text" id="document" placeholder="...">
+    <label for="document"> Documento </label>
+  </div>
+  <div class="field hitbox">
+    <input type="date" id="born_date" placeholder="...">
+    <label for="born_date"> Fecha nacimiento </label>
+  </div>
+  <div class="field hitbox">
+    <input type="email" id="sexo" placeholder="...">
+    <label for="sexo"> Sexo </label>
+  </div>
+  <div class="field hitbox">
+    <button (click)="send()" type="button" class="btn btn-primary"> ENVIAR </button>
+</div>

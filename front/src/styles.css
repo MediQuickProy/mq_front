@@ -238,6 +238,8 @@ label {
     flex-direction: column;
     position: absolute;
     align-items: center;
+    justify-content: top;
+    
     
     width: fit-content;
     height: fit-content;

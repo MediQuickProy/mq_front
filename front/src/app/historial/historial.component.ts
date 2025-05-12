@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../recurrent-modules/navbar/navbar.component";
 import { HistorialListComponent } from './historial-list/historial-list.component';
 import { HistorialDetailComponent } from './historial-detail/historial-detail.component';
+import { HistorialFormComponent } from './historial-form/historial-form.component';
 
 @Component({
   selector: 'app-historial',
@@ -10,7 +11,8 @@ import { HistorialDetailComponent } from './historial-detail/historial-detail.co
   imports: [
     NavbarComponent,
     HistorialListComponent,
-    HistorialDetailComponent
+    HistorialDetailComponent,
+    HistorialFormComponent
   ]
 })
 export class HistorialComponent implements OnInit {

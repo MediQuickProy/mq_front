@@ -1,10 +1,10 @@
 .card{
-    width: 28vw;
-    transform: translateX(-50%);
+    width: 40%;
     text-align: center;
     border: 3px solid var(--primary-dark);
     padding: 1rem 3rem 1rem 3rem;
-    top: 40%;
+    top: 80%;
+    transform: translateX(10%);
 }
 
 .hitbox{

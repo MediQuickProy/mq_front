@@ -16,8 +16,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     position: absolute;
+    top: -5rem;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     text-align: left;
     width: 100vw;
     height: 100vh;
