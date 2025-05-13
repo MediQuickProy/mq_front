@@ -1,5 +1,9 @@
 .card{
-    width: 28vw;
-    transform: translateX(-50%);
+    width: 50%;
+    transform: translateX(-50%) translateY(15%);
     border: 3px solid var(--primary-dark);
+}
+
+strong{
+    color: var(--primary-dark);
 }

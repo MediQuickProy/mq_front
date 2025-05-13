@@ -1,5 +1,8 @@
 <div class="card">
   <h5 class="card-title">Análisis de Historial</h5>
+  @if (isLoading){
+    <span class="loader"></span>
+  }
   <div #formContainer class="row">
     <div class="field">
       <input type="text" id="patient" placeholder="...">

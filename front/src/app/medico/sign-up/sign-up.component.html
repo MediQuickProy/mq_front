@@ -1,57 +1,62 @@
-<div #formContainer class="card">
-  <div class="card-title">
-    <p><strong> REGISTRAR </strong><p>
+<div class="col">
+  <div #formContainer class="card">
+    <div class="card-title">
+      <p><strong> REGISTRAR </strong><p>
+    </div>
+    <div class="field">
+      <input type="text" id="reg_id" placeholder="...">
+      <label for="reg_id"> ID autoritativo </label>
+    </div>
+    <div class="grid-container">
+      <div class="field">
+        <input type="text" id="username" placeholder="...">
+        <label for="username"> Identificación </label>
+      </div>
+      <div class="field">
+        <input type="text" id="password" placeholder="...">
+        <label for="password"> Contraseña </label>
+      </div>
+      <div class="field">
+        <input type="text" id="name" placeholder="...">
+        <label for="name"> Nombre </label>
+      </div>
+      <div class="field">
+        <input type="date" id="born_date" placeholder="...">
+        <label for="born_date"> Fecha nacimiento </label>
+      </div>
+      <div class="field">
+        <input type="email" id="email" placeholder="...">
+        <label for="email"> Correo </label>
+      </div>
+      <div class="field">
+        <input type="tel" id="phone" placeholder="...">
+        <label for="phone"> Contacto </label>
+      </div>
+    </div>
+    <div class="field">
+      <input type="text" id="position" placeholder="...">
+      <label for="position"> Cargo </label>
+    </div>
+    <div class="field">
+      <button (click)="send()" type="button" class="btn btn-primary"> ENVIAR </button>
   </div>
-  <div class="field">
-    <input type="text" id="reg_id" placeholder="...">
-    <label for="reg_id"> ID autoritativo </label>
-  </div>
-  <div class="grid-container">
-    <div class="field">
-      <input type="text" id="username" placeholder="...">
-      <label for="username"> Identificación </label>
-    </div>
-    <div class="field">
-      <input type="text" id="password" placeholder="...">
-      <label for="password"> Contraseña </label>
-    </div>
-    <div class="field">
-      <input type="text" id="name" placeholder="...">
-      <label for="name"> Nombre </label>
-    </div>
-    <div class="field">
-      <input type="date" id="born_date" placeholder="...">
-      <label for="born_date"> Fecha nacimiento </label>
-    </div>
-    <div class="field">
-      <input type="email" id="email" placeholder="...">
-      <label for="email"> Correo </label>
-    </div>
-    <div class="field">
-      <input type="tel" id="phone" placeholder="...">
-      <label for="phone"> Contacto </label>
-    </div>
-  </div>
-  <div class="field">
-    <input type="text" id="position" placeholder="...">
-    <label for="position"> Cargo </label>
-  </div>
-  <div class="field">
-    <button (click)="send()" type="button" class="btn btn-primary"> ENVIAR </button>
-</div>
 
-<div class="modal" [ngClass]="{'show': showModal}" [hidden]="!showModal">
-  <div class="modal-content success-border">
-    <div class="success modal-header">
-      <h2> REGISTRADO </h2>
-      <button class="close" (click)="closeModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon bi bi-clipboard-check" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
-        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
-        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
-      </svg>
+  <div class="modal" [ngClass]="{'show': showModal}" [hidden]="!showModal">
+    <div class="modal-content">
+      <div class="modal-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="modal-icon bi bi-check-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+        </svg>
+      </div>
+      <div class="modal-body">
+        <h3>Registrado Exitosamente</h3>
+        <div class="hspaced"></div>
+        <div class="col col-buttons">
+          <button (click)="closeModal()" class="btn btn-primary"> CERRAR </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+  

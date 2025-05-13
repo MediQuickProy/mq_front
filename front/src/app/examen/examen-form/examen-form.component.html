@@ -1,12 +1,15 @@
 <div class="card">
   <h5 class="card-title">Análisis de Imagen</h5>
+  @if (isLoading){
+    <span class="loader"></span>
+  }
   <div #formContainer class="row">
     <div class="field">
       <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
       <label for="patient"> ID Paciente </label>
     </div>
     <div class="field">
-      <input type="file" class="form-control btn-primary hitbox" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+      <input type="file" class="form-control btn-primary hitbox" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" (change)="onFileSelected($event)">
     </div>
     <button (click)="predict()" type="button" class="btn btn-primary"> CLASIFICAR </button>
   </div>

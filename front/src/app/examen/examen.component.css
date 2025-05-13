@@ -16,12 +16,13 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     position: absolute;
-    top: -5rem;
+    top: -6rem;
     justify-content: center;
     align-items: top;
-    text-align: left;
-    width: 100vw;
+    text-align: center;
+    width: 90%;
     height: 100vh;
+    left: 100px;
 }
 
 .row{

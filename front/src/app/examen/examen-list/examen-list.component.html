@@ -4,26 +4,26 @@
       <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
       <label for="patient"> ID Paciente </label>
     </div>
-    <div class="field">
-      <input type="text" id="history" placeholder="..." [formControl]="idHistorial">
-      <label for="history"> ID Historial </label>
-    </div>
     <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
   </div>
   <div class="title">
     <h5>ID Examen</h5>
-    <h5>ID Historial</h5>
     <h5>ID Paciente</h5>
-    <h5>Última actualización</h5>
+    <h5>Fecha</h5>
+    <h5>Predicción</h5>
   </div>
   <div class="line"></div>
-  @for (examen of resultados; track examen.id_examen){
-    <div class="element">
-      <p>{{examen.id_examen}}</p>
-      <p>{{examen.id_historial}}</p>
-      <p>{{examen.id_paciente}}</p>
-      <p>{{examen.fecha_realizacion}}</p>
-    </div>
-  }
-
+  <div class="table-items">
+    @for (examen of examenesFiltrados; track examen.id){
+      <div class="element" (click)="onSelected(examen)">
+        <p>{{examen.id}}</p>
+        <p>{{examen.paciente_id}}</p>
+        <p>{{examen.fecha}}</p>
+        <p>{{examen.prediccion}}</p>
+      </div>
+    }
+  </div>
 </div>
+@if (selected){
+  <app-examen-detail [examenDetail]="selectedExamen"></app-examen-detail>
+}

@@ -1,11 +1,3 @@
-.icon{
-    position: relative;
-    top: -5%;
-    width: 20em;
-    height: 20em;
-    color: var(--primary-dark);
-}
-
 .hitbox{
     margin: 15px;
     margin-left: 1px;
@@ -15,4 +7,15 @@
     width: 400px;
     height: fit-content;
     transform: translateX(-50%) translateY(10%);
+}
+
+.icon{
+    width: 10em;
+    height: 10em;
+    color: var(--primary-dark);
+}
+
+.modal.show{
+    top: -14rem;
+    left: -45.6rem;
 }

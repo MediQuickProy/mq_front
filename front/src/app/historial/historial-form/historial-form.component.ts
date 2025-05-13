@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historial-form.component.css']
 })
 export class HistorialFormComponent implements OnInit {
+  isLoading = false;
 
   constructor() { }
 
@@ -13,7 +14,7 @@ export class HistorialFormComponent implements OnInit {
   }
 
   proccess(){
-    
+    this.isLoading = !this.isLoading;
   }
 
 }
