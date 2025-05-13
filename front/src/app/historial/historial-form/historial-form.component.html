@@ -5,11 +5,11 @@
   }
   <div #formContainer class="row">
     <div class="field">
-      <input type="text" id="patient" placeholder="...">
+      <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
       <label for="patient"> ID Paciente </label>
     </div>
     <div class="field">
-      <input type="file" class="form-control btn-primary hitbox" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+      <input type="file" class="form-control btn-primary hitbox" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" (change)="onFileSelected($event)">
     </div>
     <button (click)="proccess()" type="button" class="btn btn-primary"> PROCESAR </button>
   </div>

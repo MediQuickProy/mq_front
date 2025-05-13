@@ -12,12 +12,10 @@
     <h5>Última actualización</h5>
   </div>
   <div class="line"></div>
-  @for (historial of resultados; track historial.id_historial){
-    <div class="element">
-      <p>{{historial.id_historial}}</p>
-      <p>{{historial.id_paciente}}</p>
-      <p>{{historial.fecha_actualizacion}}</p>
-    </div>
-  }
+  <div class="element">
+    <p>{{historialFiltrado.id}}</p>
+    <p>{{historialFiltrado.paciente_id}}</p>
+    <p>{{historialFiltrado.fecha}}</p>
+  </div>
 
 </div>

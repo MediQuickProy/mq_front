@@ -39,6 +39,6 @@ export class ExamenFormComponent implements OnInit {
   const input = event.target as HTMLInputElement;
   if (input.files && input.files.length > 0) {
     this.file.setValue(input.files[0]);
+    }
   }
-}
 }
