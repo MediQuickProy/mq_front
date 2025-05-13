@@ -2,5 +2,10 @@
   <div class="card-title">
     <p> Resumen Historial <p>
   </div>
-  <p>Hola mundo</p>
+  <div class="content">
+    @if(historial){
+      <p>{{historial.resumen}}</p>
+      <p>{{historial.insights}}</p>
+    }
+  </div>
 </div>

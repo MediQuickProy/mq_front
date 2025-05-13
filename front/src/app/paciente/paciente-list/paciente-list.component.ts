@@ -1,37 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { PacienteService } from '../paciente.service';
+import { Paciente } from '../paciente';
+import { PacienteDetailComponent } from '../paciente-detail/paciente-detail.component';
 
 @Component({
   selector: 'app-paciente-list',
   templateUrl: './paciente-list.component.html',
   styleUrls: ['./paciente-list.component.css'],
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,
+    PacienteDetailComponent
+  ],
 })
 export class PacienteListComponent implements OnInit {
-  idPaciente = new FormControl('');
-  resultados: any[] = [];
+  docPaciente = new FormControl('');
+  pacienteResultado!: Paciente;
+  pacienteSelected!: Paciente;
 
-  pacientes = [{ "id": 1, "nombre": "Juan Pérez", "fechaNacimiento": "1990-05-14" }, 
-    { "id": 2, "nombre": "Ana Gómez", "fechaNacimiento": "1985-09-22" }, 
-    { "id": 3, "nombre": "Carlos López", "fechaNacimiento": "2000-01-30" }, 
-    { "id": 4, "nombre": "Angelica Gonzales", "fechaNacimiento": "2004-04-10" }];
-
-  constructor() { }
+  constructor(private pacienteService: PacienteService) { }
 
   ngOnInit() {
   }
 
   lookfor(){
     // Obtener los valores de los inputs
-    const idPacienteValue = this.idPaciente.value;
+    const docPacienteValue = this.docPaciente.value!;
 
-    // Filtrar los resultados según los valores de los inputs
-    this.resultados = this.pacientes.filter(paciente => {
-      if (!idPacienteValue) {
-        return false; // Si no hay filtros, mostrar todos los resultados
-      }
-      return (idPacienteValue ? paciente.id.toString() == idPacienteValue : true);
-    });
+    if (docPacienteValue === '') {
+      alert('Por favor, ingrese un número de documento.');
+    } else {
+      // Llamar al servicio para obtener el paciente
+      this.pacienteService.getPaciente(docPacienteValue).subscribe((paciente) => {
+        // Guardar el paciente en la variable resultados
+        this.pacienteResultado = paciente;
+      });
+    }
+  }
+
+  selectPaciente(paciente: Paciente) {
+    this.pacienteSelected = paciente;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms'
 import { HistorialService } from '../historial.service';
 import { Historial } from '../historial';
@@ -11,10 +11,10 @@ import { Historial } from '../historial';
 })
 export class HistorialListComponent implements OnInit {
   historialFiltrado!: Historial;
+  @Output() historialSelected = new EventEmitter<Historial>();
 
   // Variables para almacenar los valores de los inputs
-  idPaciente= new FormControl('');
-  resultados: any[] = [];
+  id_Paciente= new FormControl('');
 
   constructor(private historialService: HistorialService) { }
 
@@ -23,10 +23,16 @@ export class HistorialListComponent implements OnInit {
 
   lookfor(){
     // Obtener los valores de los inputs
-    const idPacienteValue = this.idPaciente.value!;
+    const idPacienteValue = this.id_Paciente.value!;
 
     this.historialService.getHistorial(idPacienteValue).subscribe((historial) => {
       this.historialFiltrado = historial;
     });
   }
+
+  selectedHistorial(historial: Historial) {
+    this.historialFiltrado = historial;
+    this.historialSelected.emit(historial);
+  }
+
 }

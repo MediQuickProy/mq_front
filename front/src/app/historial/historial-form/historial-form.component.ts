@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HistorialService } from '../historial.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Historial } from '../historial';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-historial-form',
   templateUrl: './historial-form.component.html',
   styleUrls: ['./historial-form.component.css'],
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,
+    CommonModule
+  ],
 })
 export class HistorialFormComponent implements OnInit {
   idPaciente= new FormControl('');
@@ -15,13 +18,14 @@ export class HistorialFormComponent implements OnInit {
   isLoading = false;
 
   historialResultado!: Historial;
+  showModal = false;
 
   constructor(private historialService: HistorialService) { }
 
   ngOnInit() {
   }
 
-  proccess(){
+  process(){
     this.isLoading = !this.isLoading;
     const idPaciente = this.idPaciente.value!;
     const file = this.file.value!;
@@ -29,6 +33,7 @@ export class HistorialFormComponent implements OnInit {
     this.historialService.getSummary(idPaciente, file).subscribe((historial) => {
       this.historialResultado = historial;
       this.isLoading = false;
+      this.showModal = true;
     });
 
     this.idPaciente.reset();
@@ -40,5 +45,9 @@ export class HistorialFormComponent implements OnInit {
   if (input.files && input.files.length > 0) {
     this.file.setValue(input.files[0]);
     }
+  }
+
+  closeModal(){
+    this.showModal = false;
   }
 }

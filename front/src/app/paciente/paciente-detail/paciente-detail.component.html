@@ -5,12 +5,16 @@
   </svg>
   <div class="main-content">
     <h5>Nombre</h5>
-    <p> ... </p>
+    @if (pacienteSelected){
+    <p> {{pacienteSelected.nombre}} </p>}
     <h5>Identificación</h5>
-    <p> ... </p>
+    @if (pacienteSelected){
+    <p> {{pacienteSelected.documento}} </p>}
     <h5>Fecha nacimiento</h5>
-    <p> ... </p>
+    @if (pacienteSelected){
+    <p> {{pacienteSelected.fecha_nacimiento}} </p>}
     <h5>Sexo</h5>
-    <p> ... </p>
+    @if (pacienteSelected){
+    <p> {{pacienteSelected.sexo}} </p>}
   </div>
 </div>

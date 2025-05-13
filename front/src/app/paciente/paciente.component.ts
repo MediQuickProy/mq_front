@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from "../recurrent-modules/navbar/navbar.component";
 import { PacienteListComponent } from './paciente-list/paciente-list.component';
-import { PacienteDetailComponent } from './paciente-detail/paciente-detail.component';
 import { PacienteFormComponent } from './paciente-form/paciente-form.component';
 
 @Component({
@@ -11,7 +10,6 @@ import { PacienteFormComponent } from './paciente-form/paciente-form.component';
   imports: [
     NavbarComponent,
     PacienteListComponent,
-    PacienteDetailComponent,
     PacienteFormComponent
   ]
 })

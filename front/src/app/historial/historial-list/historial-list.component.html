@@ -1,7 +1,7 @@
 <div class="main">
   <div #formContainer class="row">
     <div class="field">
-      <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
+      <input type="text" id="patient" placeholder="..." [formControl]="id_Paciente">
       <label for="patient"> ID Paciente </label>
     </div>
     <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
@@ -12,10 +12,12 @@
     <h5>Última actualización</h5>
   </div>
   <div class="line"></div>
-  <div class="element">
-    <p>{{historialFiltrado.id}}</p>
-    <p>{{historialFiltrado.paciente_id}}</p>
-    <p>{{historialFiltrado.fecha}}</p>
+  <div class="element" (click)="selectedHistorial(historialFiltrado)">
+    @if(historialFiltrado){
+      <p>{{historialFiltrado.id}}</p>
+      <p>{{historialFiltrado.paciente_id}}</p>
+      <p>{{historialFiltrado.fecha}}</p>
+  }
   </div>
 
 </div>

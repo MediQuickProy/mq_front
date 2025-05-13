@@ -2,8 +2,8 @@
   <div class="row">
     <div #formContainer class="row">
       <div class="field">
-        <input type="text" id="patient" placeholder="..." [formControl]="idPaciente">
-        <label for="patient"> ID Paciente </label>
+        <input type="text" id="patient" placeholder="..." [formControl]="docPaciente">
+        <label for="patient"> Documento Paciente </label>
       </div>
       <button (click)="lookfor()" type="button" class="btn btn-primary"> BUSCAR </button>
     </div>
@@ -14,12 +14,12 @@
     <h5>Fecha de nacimiento</h5>
   </div>
   <div class="line"></div>
-  @for (paciente of resultados; track paciente.id){
-    <div class="element">
-      <p>{{paciente.id}}</p>
-      <p>{{paciente.nombre}}</p>
-      <p>{{paciente.fechaNacimiento}}</p>
-    </div>
-  }
-
+  <div class="element" (click)="selectPaciente(pacienteResultado)">
+    @if (pacienteResultado){
+      <p>{{pacienteResultado.id}}</p>
+      <p>{{pacienteResultado.nombre}}</p>
+      <p>{{pacienteResultado.fecha_nacimiento}}</p>
+    }
+  </div>
 </div>
+<app-paciente-detail [pacienteSelected]="pacienteSelected"></app-paciente-detail>

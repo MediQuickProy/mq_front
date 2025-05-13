@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms'
 import { ExamenService } from '../examen.service';
 import { Examen } from '../examen';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-examen-form',
   templateUrl: './examen-form.component.html',
   styleUrls: ['./examen-form.component.css'],
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,
+    CommonModule
+  ],
 })
 export class ExamenFormComponent implements OnInit {
    idPaciente= new FormControl('');
@@ -15,6 +18,7 @@ export class ExamenFormComponent implements OnInit {
    isLoading = false;
 
    examenResultado!: Examen;
+    showModal = false;
 
   constructor(private examenService: ExamenService) { }
 
@@ -29,6 +33,7 @@ export class ExamenFormComponent implements OnInit {
     this.examenService.makePrediction(idPaciente, file).subscribe((examen) => {
       this.examenResultado = examen;
       this.isLoading = false;
+      this.showModal = true;
     });
 
     this.idPaciente.reset();
@@ -40,5 +45,9 @@ export class ExamenFormComponent implements OnInit {
   if (input.files && input.files.length > 0) {
     this.file.setValue(input.files[0]);
     }
+  }
+
+  closeModal(){
+    this.showModal = false;
   }
 }
